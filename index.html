@@ -347,6 +347,70 @@
     border-radius: 4px;
   }
 
+  /* TIMELINE */
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 0 2rem;
+    position: relative;
+  }
+
+  .timeline-item + .timeline-item { margin-top: 2rem; }
+
+  .timeline-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--muted);
+    padding-top: 0.2rem;
+    text-align: right;
+    line-height: 1.5;
+  }
+
+  .timeline-content {
+    border-left: 1px solid var(--border);
+    padding-left: 1.75rem;
+    padding-bottom: 2rem;
+    position: relative;
+  }
+
+  .timeline-content::before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 6px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--violet);
+    border: 2px solid var(--bg);
+  }
+
+  .timeline-role {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--text);
+    margin-bottom: 0.2rem;
+  }
+
+  .timeline-org {
+    font-size: 0.88rem;
+    color: var(--violet-light);
+    margin-bottom: 0.6rem;
+  }
+
+  .timeline-desc {
+    font-size: 0.9rem;
+    color: #9CA3AF;
+    line-height: 1.7;
+  }
+
   /* DIVIDER */
   .divider {
     border: none;
@@ -463,6 +527,7 @@
   <ul class="nav-links">
     <li><a href="#stack">Stack</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -474,7 +539,7 @@
     Vyshnavi<br><span class="accent">Sunil Kumar</span>
   </h1>
   <p class="hero-role">
-    <span class="role-highlight">AspiringAI Engineer</span> &nbsp;·&nbsp; MDS @ RMIT Melbourne
+    <span class="role-highlight">Aspiring AI Engineer</span> &nbsp;·&nbsp; MDS @ RMIT Melbourne
   </p>
   <p class="hero-bio">
     Building AI systems that are more than wrappers — end-to-end pipelines, RAG applications, and cloud-native architectures. I work in the space where data science meets production engineering.
@@ -516,7 +581,7 @@
     <span class="stack-tag">Spark</span>
     <span class="stack-tag">Git</span>
     <span class="stack-tag">CloudFront</span>
-    <span class="stack-tag">TensorFlow</span>
+    <span class="stack-tag">Groq API</span>
   </div>
 </section>
 
@@ -571,6 +636,73 @@
         <span class="project-tag">ML</span>
       </div>
     </a>
+
+    <a href="https://github.com/vyshnavi259sk" target="_blank" rel="noopener" class="project-card">
+      <div class="project-header">
+        <span class="project-name">Spark Orchestration Pipeline</span>
+        <span class="project-arrow">↗</span>
+      </div>
+      <p class="project-desc">Orchestrates Python and Scala Spark jobs via Apache Airflow DAGs in a Dockerized environment — includes MLlib linear regression and scheduled ETL. Built with Rohit Krishnan.</p>
+      <div class="project-tags">
+        <span class="project-tag">Spark</span>
+        <span class="project-tag">Airflow</span>
+        <span class="project-tag">Scala</span>
+        <span class="project-tag">MLlib</span>
+        <span class="project-tag">Docker</span>
+      </div>
+    </a>
+
+    <a href="https://github.com/vyshnavi259sk" target="_blank" rel="noopener" class="project-card">
+      <div class="project-header">
+        <span class="project-name">IPL Data Analysis — PySpark ETL</span>
+        <span class="project-arrow">↗</span>
+      </div>
+      <p class="project-desc">ETL pipeline on Databricks with S3 storage — loaded, transformed, and derived insights from IPL performance data using PySpark and SQL. Built with Rohit Krishnan.</p>
+      <div class="project-tags">
+        <span class="project-tag">PySpark</span>
+        <span class="project-tag">Databricks</span>
+        <span class="project-tag">AWS S3</span>
+        <span class="project-tag">SQL</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- EXPERIENCE & EDUCATION -->
+<section id="experience" class="fade-in">
+  <p class="section-label">Background</p>
+  <h2 class="section-title">Experience & Education</h2>
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="timeline-date">Feb 2025 –<br>Present</div>
+      <div class="timeline-content">
+        <p class="timeline-role">Master of Data Science</p>
+        <p class="timeline-org">RMIT University · Melbourne, Australia</p>
+        <p class="timeline-desc">Coursework in Machine Learning, Cloud Computing, Time Series Analysis, and Data Visualisation. Building towards AI engineering through independent projects in LangChain, RAG, and AWS.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">Apr – Jul 2023</div>
+      <div class="timeline-content">
+        <p class="timeline-role">Web Development Intern</p>
+        <p class="timeline-org">Digiadd Technologies · Bengaluru, India</p>
+        <p class="timeline-desc">Built four React-based analytics dashboards serving 100+ organisational stakeholders. Developed interactive data visualisations using the MERN stack, improving user experience and real-time decision-making.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">2020 – 2024</div>
+      <div class="timeline-content">
+        <p class="timeline-role">BTech — Computer Science Engineering</p>
+        <p class="timeline-org">VIT Chennai · Specialisation: Cyber Physical Systems</p>
+        <p class="timeline-desc">Undergraduate foundation in systems, algorithms, and software engineering. Specialised in Cyber Physical Systems — bridging embedded systems with data and AI.</p>
+      </div>
+    </div>
 
   </div>
 </section>
